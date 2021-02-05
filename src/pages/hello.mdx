@@ -2,6 +2,11 @@
 title: Hello, world!
 path: /hello-world
 date: 2021-01-14
+author: Kamil
 ---
 
 # Hello, world!
+
+<h1>{props.pageContext.frontmatter.title}</h1>
+<p>{props.pageContext.frontmatter.path}</p>
+<p>{props.pageContext.frontmatter.date}</p>

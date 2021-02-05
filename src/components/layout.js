@@ -1,8 +1,11 @@
 import React from 'react';
 import { css } from '@emotion/react';
+import { MDXProvider } from '@mdx-js/react';
+import { Message } from 'theme-ui';
 import { useStaticQuery, Link, graphql } from 'gatsby';
 
 import { rhythm } from '../utils/typography';
+
 
 export default function Layout({ children }) {
   const data = useStaticQuery(
@@ -17,7 +20,8 @@ export default function Layout({ children }) {
     `
   );
   return (
-    <div
+    <MDXProvider
+      components={Message}
       css={css`
         margin: 0 auto;
         max-width: 700px;
@@ -65,6 +69,6 @@ export default function Layout({ children }) {
         <Link to={'/contact/'}>Contact</Link>
       </div>
       {children}
-    </div>
+    </MDXProvider>
   );
 }
